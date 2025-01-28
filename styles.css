@@ -1,4 +1,18 @@
 * {
-    outline: 2px solid red;
+    box-sizing: border-box;
   }
-  
+
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  height: 600px;
+  width: 600px;
+  outline: 2px solid #605258;
+}
+
+.grid {
+  height: 1rem;
+  width: 1rem;
+  outline: 1px solid #605258; 
+}
