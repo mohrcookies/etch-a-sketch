@@ -16,13 +16,12 @@ function createDefaultGrid() {
     for (let i = 1; i <= 256; i++) {
         const divGrid = document.createElement('div');
         divGrid.classList.add('grid');
-        divGrid.style.height = `${600/size}px`;
-        divGrid.style.width = `${600/size}px`;
+        divGrid.style.height = `${600/16}px`;
+        divGrid.style.width = `${600/16}px`;
         divGrid.style.opacity = 0.1;
         divGrid.addEventListener('mouseover', (event) => { 
             event.target.style.backgroundColor = getRandomColor();
-            let colorOpacity = 0.1;
-            event.target.style.opacity = colorOpacity += 0.1;
+            event.target.style.opacity = parseFloat(event.target.style.opacity) + 0.1;
             });
         gridContainer.appendChild(divGrid);
     }
@@ -42,6 +41,7 @@ function customGrid(size) {
         divGrid.style.opacity = 0.1;
         divGrid.addEventListener('mouseover', (event) => { 
             event.target.style.backgroundColor = getRandomColor();
+            event.target.style.opacity = parseFloat(event.target.style.opacity) + 0.1;
             });
         gridContainer.appendChild(divGrid);
     } 
