@@ -53,7 +53,19 @@ function userInputPrompt() {
 
 userInputBtn.addEventListener('click', userInputPrompt);
 
+//random color generator
+const hexCharacters = [0,1,2,3,4,5,6,7,8,9,'A','B','C','D','E','F'];
+function getHexCharacter() {
+    return hexCharacters[Math.floor(Math.random() * 16)];
+}
 
+function getRandomColor() {
+    let hexColor = '#';
+    for (let i = 0; i < 6; i++) {
+        hexColor += getHexCharacter();
+    }
+    return hexColor;
+}
 
 
 
