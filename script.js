@@ -32,45 +32,41 @@ function customGrid(size) {
         divGrid.classList.add('grid');
         divGrid.setAttribute('style', `height: ${600/size}px; width: ${600/size}px`);
         divGrid.addEventListener('mouseover', (event) => { 
-            event.target.style.backgroundColor = "purple";
+            event.target.style.backgroundColor = 'purple';
             });
         container.appendChild(divGrid);
-    }
-}
+    } 
+}  
 
 
 //button to prompt for new grid dimensions
-let userSize;
-userInput.addEventListener('click', () => {
-    userSize = prompt('Pick a grid width between 1 and 100.');
+function userInputPrompt() {
+    const userSize = prompt('Pick a grid width between 1 and 100.');
     parseInt(userSize);
-    customGrid(userSize);
-})
+    if (userSize < 1 || userSize > 100 || isNaN(userSize)) {
+        alert('Pick a number between 1 and 100');
+        userInputPrompt();
+    } else customGrid(userSize);
+}
+
+userInputBtn.addEventListener('click', userInputPrompt);
 
 
 
 
 
-
-
-
-//alternative function for custom user size
-// function customGrid(size) {
-//     gridSize = size * size;
-//     for (let i = 1; i <= gridSize; i++) {
-//         let divGrid = document.createElement('div');
-//         divGrid.classList.add('grid');
-//         divGrid.setAttribute('style', `height: ${600/size}px; width: ${600/size}px`);
-//         container.appendChild(divGrid);
-//     }
+//function to clear image (doesn't allow redrawing yet)
+// function clearImage() {
+//     const pixels = document.querySelectorAll('.grid');
+//     pixels.forEach((pixel) => pixel.setAttribute('style', 'backgroundColor: transparent'));
 // }
-//hover effect
-// const grid = document.querySelectorAll('.grid');
-// grid.forEach((square) => {
-//     square.addEventListener('mouseover', (event) => { 
-//     event.target.style.backgroundColor = "purple";
-//     });
-// });
+// clearBtn.addEventListener('click', clearImage);
+
+
+
+
+
+
 
 
 

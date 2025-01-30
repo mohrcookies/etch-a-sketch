@@ -9,7 +9,13 @@
   height: 600px;
   width: 600px;
   outline: 2px solid #605258;
+  margin: auto;
 }
 
+.btn-container {
+  display: flex;
+  justify-content: center;
+  padding: 10px;
+}
 
 
