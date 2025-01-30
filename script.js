@@ -3,10 +3,9 @@ const container = document.querySelector('.container');
 const userInput = document.querySelector('.user-input');
 
 //function to create grid
-createDefaultGrid(16);
 function createDefaultGrid() {
     for (let i = 1; i <= 256; i++) {
-        let divGrid = document.createElement('div');
+        const divGrid = document.createElement('div');
         divGrid.classList.add('grid');
         divGrid.setAttribute('style', `height: ${600/16}px; width: ${600/16}px`);
         divGrid.addEventListener('mouseover', (event) => { 
@@ -15,12 +14,21 @@ function createDefaultGrid() {
         container.appendChild(divGrid);
     }
 }
+createDefaultGrid();
+
+//function to remove grid     (while container.firstChild exists, remove it.)
+function removeGrid() {
+    while (container.firstChild) {
+        container.removeChild(container.firstChild);
+    }
+}
 
 //function for custom user size
 function customGrid(size) {
+    removeGrid();
     gridSize = size * size;
     for (let i = 1; i <= gridSize; i++) {
-        let divGrid = document.createElement('div');
+        const divGrid = document.createElement('div');
         divGrid.classList.add('grid');
         divGrid.setAttribute('style', `height: ${600/size}px; width: ${600/size}px`);
         divGrid.addEventListener('mouseover', (event) => { 
