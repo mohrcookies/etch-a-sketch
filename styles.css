@@ -2,7 +2,11 @@
     box-sizing: border-box;
   }
 
-.container {
+.body-container {
+  text-align: center;
+}
+
+.grid-container {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;

@@ -1,6 +1,14 @@
 //references
-const container = document.querySelector('.container');
-const userInput = document.querySelector('.user-input');
+const gridContainer = document.querySelector('.grid-container');
+const userInputBtn = document.querySelector('.user-input-btn');
+const clearBtn = document.querySelector('.clear-btn');
+
+//function to remove grid     (while gridContainer.firstChild exists, remove it.)
+function removeGrid() {
+    while (gridContainer.firstChild) {
+        gridContainer.removeChild(gridContainer.firstChild);
+    }
+}
 
 //function to create grid
 function createDefaultGrid() {
@@ -11,17 +19,11 @@ function createDefaultGrid() {
         divGrid.addEventListener('mouseover', (event) => { 
             event.target.style.backgroundColor = "purple";
             });
-        container.appendChild(divGrid);
+        gridContainer.appendChild(divGrid);
     }
 }
 createDefaultGrid();
 
-//function to remove grid     (while container.firstChild exists, remove it.)
-function removeGrid() {
-    while (container.firstChild) {
-        container.removeChild(container.firstChild);
-    }
-}
 
 //function for custom user size
 function customGrid(size) {
@@ -34,7 +36,7 @@ function customGrid(size) {
         divGrid.addEventListener('mouseover', (event) => { 
             event.target.style.backgroundColor = 'purple';
             });
-        container.appendChild(divGrid);
+        gridContainer.appendChild(divGrid);
     } 
 }  
 
