@@ -18,7 +18,7 @@ function createDefaultGrid() {
         divGrid.classList.add('grid');
         divGrid.setAttribute('style', `height: ${600/16}px; width: ${600/16}px`);
         divGrid.addEventListener('mouseover', (event) => { 
-            event.target.style.backgroundColor = "purple";
+            event.target.style.backgroundColor = getRandomColor();
             });
         gridContainer.appendChild(divGrid);
     }
@@ -35,7 +35,7 @@ function customGrid(size) {
         divGrid.classList.add('grid');
         divGrid.setAttribute('style', `height: ${600/size}px; width: ${600/size}px`);
         divGrid.addEventListener('mouseover', (event) => { 
-            event.target.style.backgroundColor = 'purple';
+            event.target.style.backgroundColor = getRandomColor();
             });
         gridContainer.appendChild(divGrid);
     } 
@@ -54,7 +54,6 @@ function userInputPrompt() {
 
 userInputBtn.addEventListener('click', userInputPrompt);
 
-//button for random colors
 
 //random color generator
 const hexCharacters = [0,1,2,3,4,5,6,7,8,9,'A','B','C','D','E','F'];
