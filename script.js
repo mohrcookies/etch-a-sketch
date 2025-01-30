@@ -2,6 +2,7 @@
 const gridContainer = document.querySelector('.grid-container');
 const userInputBtn = document.querySelector('.user-input-btn');
 const clearBtn = document.querySelector('.clear-btn');
+const randomColorBtn = document.querySelector('.random-color-btn');
 
 //function to remove grid     (while gridContainer.firstChild exists, remove it.)
 function removeGrid() {
@@ -52,6 +53,8 @@ function userInputPrompt() {
 }
 
 userInputBtn.addEventListener('click', userInputPrompt);
+
+//button for random colors
 
 //random color generator
 const hexCharacters = [0,1,2,3,4,5,6,7,8,9,'A','B','C','D','E','F'];
