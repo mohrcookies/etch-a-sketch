@@ -57,7 +57,6 @@ function userInputPrompt() {
         userInputPrompt();
     } else customGrid(userSize);
 }
-
 userInputBtn.addEventListener('click', userInputPrompt);
 
 
